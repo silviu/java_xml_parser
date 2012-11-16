@@ -1,0 +1,42 @@
+GRIJINCU SILVIU
+Cărțile lui Randy
+
+
+Pe lângă clasele cerute in cerința temei am mai implementat:
+	clasa Useful primește ca parametrii o colectie de noduri si rădăcina catalog:
+ 		* am trimis o copie a arrayListului "fii" sub forma unei colecții, 
+ 		  pentru a ascunde implementarea structurii, astfel protejând arborele de fii;
+ 		* nodul parinte pentru a avea acces la elementul "cash";
+ 		* rezolvarea problemei rucsacului.
+	 	
+	 		
+	În clasa Document am implementat urmatoarele metode:
+		* ignoreWhiteSpace - primeste ca parametru un BufferedReader in;
+						   - am folosit metodele mark() si reset() pentru a muta 
+						   	 pointerul in fisier(buffuer) dupa ultimul whitespace citit. 
+		* isDelim(char c)  - verifica daca un char primit ca parametru apartine 
+							 unui string constant, care contine delimitatorii 
+							 considerati relevanti pentru rezolvarea problemei.
+		* readChar		   - citește urmatorul caracter, iar daca acesta nu mai
+									exista aruncă o exceptie.
+		* readIdentifier   - citește un string
+		* readQuotedValue  - citește textul din valoarea atributului, care se afla 
+							 între ""
+		* readAttribute    - Citeste atat atributul(prin apelarea lui readIdentifier)
+							 cat si valoarea acestuia (prin apelarea metodei readQuotedValue)
+		* readExpected     - Verifică dacă urmatorul caracter este "c",
+							 dacă nu aruncă o excepție.
+		* tryReadBlob      - Încearcă să citească blob. Dacă nu reușește întoarce null
+		*tryReadEndTag	   - Încearcă sa citeasca "</ name >" -> return true sau false
+	*readChildrenAndEndTag - Încearca să citească blob.Apoi încearcă să citească endtag,
+							 iar dacă reușește înseamnă că am reușit să citim blob.
+							 Dacă nu gasește endtag, înseamnă că urmează un fiu și îl citește.
+		* peek             - Citesc următorul caracter, și duc pointerul inapoi unde era, după citire;
+		* readStartTag     - Citește începutul unui nod
+		* readNode         - Citeste un nou nod
+	
+	În clasa Node:
+		* getChildren      - Returnează o copie a listei de fii.
+		* getAttribute     - Pentru un atribut căutat se reurnează valoarea acestuia sau -1.
+
+		 	
